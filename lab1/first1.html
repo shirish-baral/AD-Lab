@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KIIT Central Library</title>
+    <img id="kiit" src="e:\AD lab\KIIT Logo Silver Jubilee 25 Years- (1).png" width="100px" height="50px" align="right" >
+</head>
+<body>
+    <h1><center><b><u>KIIT Central Library</u></b></center></h1>
+    <marquee bgcolor="green"><h3>Student Registration Form</h3></marquee>
+    <form action="javascript:submit()">
+        <b>Name</b><br>
+        <label>First Name:</label><br>
+        <input type="text" name="fname" value=""><br>
+        <label>Middle Name:</label><br>
+        <input type="text" name="mname" value=""><br>
+        <label>Last Name:</label><br>
+        <input type="text" name="lname" value=""><br><br>
+
+        <b>Log in Details</b><br>
+        <label>E-mail Address:</label><br>
+        <input type="email" name="email" value=""><br>
+        <label>Password:</label><br>
+        <input type="password" name="pswd" value=""><br>
+        <label>Confirm your password:</label><br>
+        <input type="password" name="cpswd" value=""><br><br>
+
+        <b>Gender:</b><br>
+        <input type="radio" id="male" name="gen" value="Male"> Male
+        <input type="radio" id="female" name="gen" value="Female"> Female
+        <input type="radio" id="others" name="gen" value="Others"> Others
+        <br><br>
+
+        <b>Address</b><br>
+        <label>Enter your Correspondence Address:</label><br>
+        <textarea name="addr" id="address" rows="3" cols="25">Correspondence Address</textarea><br>
+        <label>Enter your Permanent Address:</label><br>
+        <textarea name="paddr" id="paddress" rows="3" cols="25">Permanent Address</textarea><br><br>
+
+        <b>Domicile State</b><br>
+        <select name="domicile" id="state" multiple="true">
+            <optgroup label="East">
+                <option>Odisha</option>
+                <option>West Bengal</option>
+            </optgroup>
+            <optgroup label="North">
+                <option>Jharkhand</option>
+                <option>Bihar</option>
+                <option>Uttar Pradesh</option>
+            </optgroup>
+            <optgroup label="South">
+                <option>Andhra Pradesh</option>
+                <option>Telangana</option>
+            </optgroup>
+            <optgroup label="West">
+                <option>Maharashtra</option>
+                <option>Gujarat</option>
+                <option>Punjab</option>
+                <option>Haryana</option>
+            </optgroup>
+        </select>
+        <br><br>
+        <input type="button" name="submit" value="Sign Up" onclick="submitForm()">
+    </form>
+
+    <script>
+            const submitForm = () => {
+                let fullName = 
+                    document.getElementsByName("fname")[0].value + " " +
+                    document.getElementsByName("mname")[0].value + " " +
+                    document.getElementsByName("lname")[0].value;
+                
+                let values = "";
+                values += "Full Name: " + fullName.trim() + "\n";
+                values += "User Email: " + document.getElementsByName("email")[0].value + "\n";
+                values += "Permanent Address: " + document.getElementsByName("paddr")[0].value + "\n";
+                alert(values);
+            };
+        
+    </script>
+</body>
+</html>
