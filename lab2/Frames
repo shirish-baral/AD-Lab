@@ -1,0 +1,3 @@
+. Create a web page as follows: having 3 frames. KIIT University will move in a marquee
+in the top frame. In the left frame 3 hyperlinks named Login, About KIIT, and Feedback
+will be there, and clicking on them will display the desired result in the main frame.
