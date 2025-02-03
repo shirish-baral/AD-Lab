@@ -7,7 +7,7 @@ public class Servlet2 extends HttpServlet {
             throws ServletException, IOException {
         
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
+        PrintWriter pw = response.getWriter();
         
         // Retrieve data from session
         HttpSession session = request.getSession();
@@ -16,9 +16,9 @@ public class Servlet2 extends HttpServlet {
         String address = (String) session.getAttribute("address");
         
         // Display the data
-        out.println("<h3>Submitted Data:</h3>");
-        out.println("Name: " + name + "<br>");
-        out.println("Roll Number: " + roll + "<br>");
-        out.println("Address: " + address);
+        pw.println("<h3>Submitted Data:</h3>");
+        pw.println("Name: " + name + "<br>");
+        pw.println("Roll Number: " + roll + "<br>");
+        pw.println("Address: " + address);
     }
 }
