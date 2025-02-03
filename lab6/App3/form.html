@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+    <script>
+        // Load saved form data when page loads
+        window.onload = function() {
+            document.getElementById('name').value = localStorage.getItem('savedName') || '';
+            document.getElementById('roll').value = localStorage.getItem('savedRoll') || '';
+            document.getElementById('address').value = localStorage.getItem('savedAddress') || '';
+        };
+
+        // Save form data to localStorage before submission
+        function saveFormData() {
+            localStorage.setItem('savedName', document.getElementById('name').value);
+            localStorage.setItem('savedRoll', document.getElementById('roll').value);
+            localStorage.setItem('savedAddress', document.getElementById('address').value);
+        }
+    </script>
+</head>
+<body>
+    <h2>Student Information Form</h2>
+    <form action="servlet1" method="post" onsubmit="saveFormData()">
+        Name: <input type="text" id="name" name="name"><br><br>
+        Roll Number: <input type="text" id="roll" name="roll"><br><br>
+        Address: <textarea id="address" name="address"></textarea><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
