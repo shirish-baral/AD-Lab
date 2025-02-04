@@ -6,9 +6,9 @@ public class Servlet1 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        // Get form parameters
         String name = request.getParameter("name");
         String roll = request.getParameter("roll");
+        
         String address = request.getParameter("address");
         
         // Store in session
@@ -17,7 +17,6 @@ public class Servlet1 extends HttpServlet {
         session.setAttribute("roll", roll);
         session.setAttribute("address", address);
         
-        // Redirect to servlet2
         response.sendRedirect("servlet2");
     }
 }
